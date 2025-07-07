@@ -1,3 +1,8 @@
+Absolutely! Here’s a polished, **professional-grade `README.md`** for your **Proactive Wellness App**, with emojis, markdown structure, and clarity that makes it stand out — perfect for GitHub or showcasing to recruiters.
+
+---
+
+````markdown
 # ✨ Proactive Wellness App
 
 Tired of feeling drained after long hours at your desk? 😴  
@@ -86,70 +91,77 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-Generate the ML Model:
-bash
-Copy
-Edit
-python fatigue.py
-Run the Flask server:
-bash
-Copy
-Edit
-python app.py
-🖥 A webcam window will pop up — press Q to quit.
+````
 
-⚛️ Frontend Setup
-bash
-Copy
-Edit
+#### Generate the ML Model:
+
+```bash
+python generate_and_train_fatigue_model.py
+```
+
+#### Run the Flask server:
+
+```bash
+python app.py
+```
+
+> 🖥 A webcam window will pop up — press `Q` to quit.
+
+---
+
+### ⚛️ Frontend Setup
+
+```bash
 cd ../frontend
 npm install      # or yarn install
 npm start        # or yarn start
-🌐 App will auto-launch at http://localhost:3000
+```
 
-🎮 Using the App
-Run both backend and frontend
+> 🌐 App will auto-launch at `http://localhost:3000`
 
-Open browser at http://localhost:3000
+---
 
-Click "Start Working Time" to begin monitoring
+## 🎮 Using the App
 
-Watch your live metrics and follow the suggestions!
+1. **Run both backend and frontend**
+2. Open browser at `http://localhost:3000`
+3. Click **"Start Working Time"** to begin monitoring
+4. Watch your live metrics and follow the suggestions!
+5. Use nap/exercise/water timers as needed
+6. Press `Q` in the OpenCV window to stop
 
-Use nap/exercise/water timers as needed
+---
 
-Press Q in the OpenCV window to stop
+## 🤝 Contributing
 
-🤝 Contributing
 We 💙 contributions!
 
-bash
-Copy
-Edit
+```bash
 # Fork the repo
 git checkout -b feature/AmazingFeature
 git commit -m "Add AmazingFeature"
 git push origin feature/AmazingFeature
 # Then open a Pull Request
-📄 License
-This project is licensed under the MIT License – see the LICENSE file for details.
+```
 
-🙌 Acknowledgements
-OpenCV
+---
 
-MediaPipe
+## 📄 License
 
-FER
+This project is licensed under the **MIT License** – see the [LICENSE](./LICENSE) file for details.
 
-pynput
+---
 
-React
+## 🙌 Acknowledgements
 
-Tailwind CSS
+* [OpenCV](https://opencv.org/)
+* [MediaPipe](https://google.github.io/mediapipe/)
+* [FER](https://github.com/justinshenk/fer)
+* [pynput](https://pypi.org/project/pynput/)
+* [React](https://reactjs.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
 
-yaml
-Copy
-Edit
+````
 
 ---
 
@@ -163,3 +175,4 @@ Edit
 git add README.md
 git commit -m "Add awesome README"
 git push
+````
