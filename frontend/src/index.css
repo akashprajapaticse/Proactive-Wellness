@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can keep other CSS rules below these directives */
+body {
+  font-family: 'Inter', sans-serif;
+}
