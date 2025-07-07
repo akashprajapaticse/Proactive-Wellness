@@ -5,6 +5,13 @@ Tired of feeling drained after long hours at your desk? 😴
 
 ---
 
+## 🎥 Demo
+
+Check out the full video walkthrough of the Proactive Wellness App:  
+📺 [Watch on YouTube](https://youtu.be/Hecs8Iu4_Kw)
+
+[![Proactive Wellness App Demo](https://img.youtube.com/vi/Hecs8Iu4_Kw/0.jpg)](https://youtu.be/Hecs8Iu4_Kw)
+
 ## 🌟 Key Features
 
 ### 👁️ Real-Time Wellness Monitoring
