@@ -91,7 +91,7 @@ pip install -r requirements.txt
 #### Generate the ML Model:
 
 ```bash
-python generate_and_train_fatigue_model.py
+python fatigue.py
 ```
 
 #### Run the Flask server:
