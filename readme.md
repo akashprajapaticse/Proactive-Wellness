@@ -1,8 +1,3 @@
-Absolutely! Here’s a polished, **professional-grade `README.md`** for your **Proactive Wellness App**, with emojis, markdown structure, and clarity that makes it stand out — perfect for GitHub or showcasing to recruiters.
-
----
-
-````markdown
 # ✨ Proactive Wellness App
 
 Tired of feeling drained after long hours at your desk? 😴  
