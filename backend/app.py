@@ -113,6 +113,8 @@ logging.info("Webcam initialized.")
 # --- Global state for latest processed prediction data (for Flask API) ---
 # This dictionary holds all the latest wellness metrics, which the Flask API will return.
 latest_prediction = {} 
+# **NEW**: store the last hydration value from frontend
+latest_hydration = 100.0
 
 # --- Global state for drinking action detection simulation ---
 is_drinking_detected = False
@@ -650,14 +652,9 @@ def update_hydration():
     hydration_level = data.get('hydration_level')
     if hydration_level is not None:
         try:
-            hydration_level = float(hydration_level)
-            # You might want to store this in a global variable or queue for use in the main loop
-            # For simplicity, we'll pass it directly to the processing function when called by the thread.
-            logging.info(f"Received hydration level from frontend: {hydration_level}%")
-            # This doesn't update the global `hydration_level_from_frontend` directly
-            # because the main loop calls `process_frame_and_predict` with the latest value.
-            # A more robust solution would be a thread-safe queue or shared variable.
-            # For now, this just logs and acknowledges receipt.
+            global latest_hydration
+            latest_hydration = hydration_level
+            logging.info(f"Received hydration level from frontend: {latest_hydration}%")
             return jsonify({"status": "success", "message": "Hydration level received"}), 200
         except ValueError:
             return jsonify({"status": "error", "message": "Invalid hydration level format"}), 400
@@ -714,6 +711,22 @@ def webcam_processing_thread():
     cap.release()
     cv2.destroyAllWindows()
     logging.info("Webcam processing thread finished and resources released.")
+
+@app.route('/predict_wellness', methods=['POST'])
+def predict_wellness():
+    """
+    Single‐call endpoint: accepts {"hydration_level": X},
+    updates latest_hydration, then returns latest_prediction.
+    """
+    data = request.get_json(silent=True) or {}
+    h = data.get('hydration_level')
+    if h is not None:
+        try:
+            global latest_hydration
+            latest_hydration = float(h)
+        except ValueError:
+            pass
+    return jsonify(latest_prediction)
 
 # --- Main Application Execution ---
 if __name__ == '__main__':
